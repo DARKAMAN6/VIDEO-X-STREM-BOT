@@ -77,27 +77,6 @@ async def alive(client: Client, message: Message):
         )
     )
 
-@Client.on_message(filters.command(["uptime", f"uptime@{BOT_USERNAME}"]))
-async def get_uptime(client: Client, message: Message):
-    current_time = datetime.utcnow()
-    uptime_sec = (current_time - START_TIME).total_seconds()
-    uptime = await _human_time_duration(int(uptime_sec))
-    await message.reply_photo(
-        photo=f"{ALIVE_IMG}",
-        caption=f"""**༎⃝💜𝐁𝐎𝐓 𝐒𝐓𝐀𝐓𝐔𝐒༎⃝➤ ✘\n**
- **༎⃝🔥𝐔𝐏𝐓𝐈𝐌𝐄༎⃝➤ ✘** `{uptime}`\n**
- **༎⃝🌺𝐒𝐓𝐀𝐑𝐓 𝐓𝐈𝐌𝐄༎⃝➤ ✘** `{START_TIME_ISO}`**""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "༎⃝🥀𝐔𝐏𝐃𝐀𝐓𝐄𝐒༎⃝➤", url=f"https://t.me/{UPDATES_CHANNEL}"
-                   )
-                ]
-            ]
-        )
-    ) 
-
 
 @Client.on_message(filters.new_chat_members)
 async def new_chat(c: Client, m: Message):
