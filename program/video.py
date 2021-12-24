@@ -126,7 +126,7 @@ async def vplay(c: Client, m: Message):
 
     if replied:
         if replied.video or replied.document:
-            loser = await replied.reply("📥 **downloading video...**")
+            loser = await replied.reply("**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
@@ -153,8 +153,8 @@ async def vplay(c: Client, m: Message):
                 await loser.delete()
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
-                    photo=f"{IMG_1}",
-                    caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **Name:** [{songname}]({link}) | `video`\n💭 **Chat:** `{chat_id}`\n🎧 **Request by:** {requester}",
+                    photo=f"{ROYAL_IMG}",
+                    caption=f"💡 **𝚃𝚁𝙰𝙲𝙺 𝙰𝙳𝙳𝙴𝙳 𝚃𝙾 𝚀𝚄𝙴𝚄𝙴 »** `{pos}`\n\n🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({link}) | `𝚅𝙸𝙳𝙴𝙾`\n💭 **𝙲𝙷𝙰𝚃 ✘** `{chat_id}`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}",
                     reply_markup=keyboard,
                 )
             else:
@@ -164,7 +164,7 @@ async def vplay(c: Client, m: Message):
                     amaze = MediumQualityVideo()
                 elif Q == 360:
                     amaze = LowQualityVideo()
-                await loser.edit("🔄 **Joining vc...**")
+                await loser.edit("**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
                 await call_py.join_group_call(
                     chat_id,
                     AudioVideoPiped(
@@ -178,8 +178,8 @@ async def vplay(c: Client, m: Message):
                 await loser.delete()
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
-                    photo=f"{IMG_2}",
-                    caption=f"🏷 **Name:** [{songname}]({link})\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}\n📹 **Stream type:** `Video`",
+                    photo=f"{ROYAL_IMG}",
+                    caption=f"🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({link})\n💭 **𝙲𝙷𝙰𝚃 ✘** `{chat_id}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}\n𖣘 **𝚂𝚃𝚁𝙴𝙰𝙼 𝚃𝚈𝙿𝙴 ✘** `𝚅𝙸𝙳𝙴𝙾`",
                     reply_markup=keyboard,
                 )
         else:
@@ -188,7 +188,7 @@ async def vplay(c: Client, m: Message):
                     "» reply to an **video file** or **give something to search.**"
                 )
             else:
-                loser = await c.send_message(chat_id, "🔍 **Searching...**")
+                loser = await c.send_message(chat_id, "**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 Q = 720
@@ -212,12 +212,12 @@ async def vplay(c: Client, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=thumbnail,
-                                caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **Name:** [{songname}]({url}) | `video`\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {requester}",
+                                caption=f"💡 **𝚃𝚁𝙰𝙲𝙺 𝙰𝙳𝙳𝙴𝙳 𝚃𝙾 𝚀𝚄𝙴𝚄𝙴 »** `{pos}`\n\n🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({url}) | `𝚅𝙸𝙳𝙴𝙾`\n⏱ **𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 ✘** `{duration}`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}",
                                 reply_markup=keyboard,
                             )
                         else:
                             try:
-                                await loser.edit("🔄 **Joining vc...**")
+                                await loser.edit("**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
                                 await call_py.join_group_call(
                                     chat_id,
                                     AudioVideoPiped(
