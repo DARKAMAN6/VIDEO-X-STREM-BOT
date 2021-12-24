@@ -8,6 +8,7 @@ from config import (
     BOT_NAME,
     BOT_USERNAME,
     GROUP_SUPPORT,
+    ASSISTANT_NAME,
     OWNER_NAME,
     UPDATES_CHANNEL,
 )
@@ -115,7 +116,7 @@ async def new_chat(c: Client, m: Message):
                             InlineKeyboardButton("💭 𝚂𝚄𝙿𝙿𝙾𝚁𝚃", url=f"https://t.me/{GROUP_SUPPORT}")
                         ],
                         [
-                            InlineKeyboardButton("👤 𝙰𝚂𝚂𝙸𝚂𝚃𝙰𝙽𝚃", url=f"https://t.me/{ass_uname}")
+                            InlineKeyboardButton("👤 𝙰𝚂𝚂𝙸𝚂𝚃𝙰𝙽𝚃", url=f"https://t.me/{ASSISTANT_NAME}")
                         ]
                     ]
                 )
