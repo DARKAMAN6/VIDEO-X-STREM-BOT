@@ -5,7 +5,7 @@
 import re
 import asyncio
 
-from config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2
+from config import ASSISTANT_NAME, BOT_USERNAME, ROYAL_IMG
 from driver.filters import command, other_filters
 from driver.queues import QUEUE, add_to_queue
 from driver.veez import call_py, user
@@ -110,7 +110,7 @@ async def play(c: Client, m: Message):
                 )
     if replied:
         if replied.audio or replied.voice:
-            suhu = await replied.reply("📥 **downloading audio...**")
+            suhu = await replied.reply("**🔥 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙰𝚄𝙳𝙸𝙾**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -127,13 +127,13 @@ async def play(c: Client, m: Message):
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await suhu.delete()
                 await m.reply_photo(
-                    photo=f"{IMG_1}",
-                    caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **Name:** [{songname}]({link}) | `music`\n💭 **Chat:** `{chat_id}`\n🎧 **Request by:** {m.from_user.mention()}",
+                    photo=f"{ROYAL_IMG}",
+                    caption=f"💡 **𝚃𝚁𝙰𝙲𝙺 𝙰𝙳𝙳𝙴𝙳 𝚃𝙾 𝚀𝚄𝙴𝚄𝙴 »** `{pos}`\n\n🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({link}) | `𝙼𝚄𝚂𝙸𝙲`\n💭 **𝙲𝙷𝙰𝚃 ✘** `{chat_id}`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {m.from_user.mention()}",
                     reply_markup=keyboard,
                 )
             else:
              try:
-                await suhu.edit("🔄 **Joining vc...**")
+                await suhu.edit("**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
                 await call_py.join_group_call(
                     chat_id,
                     AudioPiped(
@@ -145,8 +145,8 @@ async def play(c: Client, m: Message):
                 await suhu.delete()
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
-                    photo=f"{IMG_2}",
-                    caption=f"🏷 **Name:** [{songname}]({link})\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}\n📹 **Stream type:** `Music`",
+                    photo=f"{ROYAL_IMG}",
+                    caption=f"🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({link})\n💭 **𝙲𝙷𝙰𝚃 ✘** `{chat_id}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}\n𖣘 **𝚂𝚃𝚁𝙴𝙰𝙼 𝚃𝚈𝙿𝙴 ✘** `𝙼𝚄𝚂𝙸𝙲`",
                     reply_markup=keyboard,
                 )
              except Exception as e:
@@ -158,7 +158,7 @@ async def play(c: Client, m: Message):
                     "» reply to an **audio file** or **give something to search.**"
                 )
             else:
-                suhu = await c.send_message(chat_id, "🔍 **Searching...**")
+                suhu = await c.send_message(chat_id, "**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 if search == 0:
@@ -181,12 +181,12 @@ async def play(c: Client, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=thumbnail,
-                                caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **Name:** [{songname}]({url}) | `music`\n**⏱ Duration:** `{duration}`\n🎧 **Request by:** {requester}",
+                                caption=f"💡 **𝚃𝚁𝙰𝙲𝙺 𝙰𝙳𝙳𝙴𝙳 𝚃𝙾 𝚀𝚄𝙴𝚄𝙴 »** `{pos}`\n\n🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({url}) | `𝙼𝚄𝚂𝙸𝙲`\n**⏱ 𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 ✘** `{duration}`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}",
                                 reply_markup=keyboard,
                             )
                         else:
                             try:
-                                await suhu.edit("🔄 **Joining vc...**")
+                                await suhu.edit("**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
                                 await call_py.join_group_call(
                                     chat_id,
                                     AudioPiped(
@@ -199,7 +199,7 @@ async def play(c: Client, m: Message):
                                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                                 await m.reply_photo(
                                     photo=thumbnail,
-                                    caption=f"🏷 **Name:** [{songname}]({url})\n**⏱ Duration:** `{duration}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}\n📹 **Stream type:** `Music`",
+                                    caption=f"🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({url})\n**⏱ 𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 ✘** `{duration}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈** {requester}\n𖣘 **𝚂𝚃𝚁𝙴𝙰𝙼 𝚃𝚈𝙿𝙴 ✘** `𝙼𝚄𝚂𝙸𝙲`",
                                     reply_markup=keyboard,
                                 )
                             except Exception as ep:
@@ -212,7 +212,7 @@ async def play(c: Client, m: Message):
                 "» reply to an **audio file** or **give something to search.**"
             )
         else:
-            suhu = await c.send_message(chat_id, "🔍 **Searching...**")
+            suhu = await c.send_message(chat_id, "**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -235,12 +235,12 @@ async def play(c: Client, m: Message):
                         )
                         await m.reply_photo(
                             photo=thumbnail,
-                            caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **Name:** [{songname}]({url}) | `music`\n**⏱ Duration:** `{duration}`\n🎧 **Request by:** {requester}",
+                            caption=f"💡 **𝚃𝚁𝙰𝙲𝙺 𝙰𝙳𝙳𝙴𝙳 𝚃𝙾 𝚀𝚄𝙴𝚄𝙴 »** `{pos}`\n\n🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({url}) | `𝙼𝚄𝚂𝙸𝙲`\n**⏱ **𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 ✘** `{duration}`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}",
                             reply_markup=keyboard,
                         )
                     else:
                         try:
-                            await suhu.edit("🔄 **Joining vc...**")
+                            await suhu.edit("**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
                             await call_py.join_group_call(
                                 chat_id,
                                 AudioPiped(
@@ -253,7 +253,7 @@ async def play(c: Client, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=thumbnail,
-                                caption=f"🏷 **Name:** [{songname}]({url})\n**⏱ Duration:** `{duration}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}\n📹 **Stream type:** `Music`",
+                                caption=f"🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({url})\n**⏱ 𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 ✘** `{duration}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}\n𖣘 **𝚂𝚃𝚁𝙴𝙰𝙼 𝚃𝚈𝙿𝙴 ✘** `𝙼𝚄𝚂𝙸𝙲`",
                                 reply_markup=keyboard,
                             )
                         except Exception as ep:
