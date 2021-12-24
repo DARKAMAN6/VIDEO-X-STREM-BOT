@@ -158,7 +158,7 @@ async def play(c: Client, m: Message):
                     "» reply to an **audio file** or **give something to search.**"
                 )
             else:
-                suhu = await c.send_message(chat_id, "**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
+                suhu = await c.send_message(chat_id, "**𝚁𝙾𝚈𝙰𝙻 𝙺𝙸𝙽𝙶 𝙾𝙽 𝙵𝙸𝚁𝙴🔥**")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 if search == 0:
@@ -186,7 +186,7 @@ async def play(c: Client, m: Message):
                             )
                         else:
                             try:
-                                await suhu.edit("**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
+                                await suhu.edit("**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝙳𝙰𝚁𝙺 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
                                 await call_py.join_group_call(
                                     chat_id,
                                     AudioPiped(
@@ -212,7 +212,7 @@ async def play(c: Client, m: Message):
                 "» reply to an **audio file** or **give something to search.**"
             )
         else:
-            suhu = await c.send_message(chat_id, "**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
+            suhu = await c.send_message(chat_id, "**𝚁𝙾𝚈𝙰𝙻 𝙺𝙸𝙽𝙶 𝙾𝙽 𝙵𝙸𝚁𝙴🔥**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
