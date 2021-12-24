@@ -9,7 +9,7 @@
         "pyrogram"
     ],
     "website": "https://t.me/DARKAMANCHANNEL",
-    "repository": "https://github.com/DARKAMAN6/VIDEO-X-STREAM-BOT",
+    "repository": "https://github.com/DARKAMAN6/VIDEO-X-STREM-BOT",
     "success_url": "https://t.me/dlwrml",
     "env": {
         "API_ID": {
