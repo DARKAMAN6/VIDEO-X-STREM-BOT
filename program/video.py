@@ -5,7 +5,7 @@
 import re
 import asyncio
 
-from config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2
+from config import ASSISTANT_NAME, BOT_USERNAME, ROYAL_IMG
 from driver.filters import command, other_filters
 from driver.queues import QUEUE, add_to_queue
 from driver.veez import call_py, user
@@ -404,7 +404,7 @@ async def vstream(c: Client, m: Message):
                 await loser.delete()
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
-                    photo=f"{IMG_1}",
+                    photo=f"{ROYAL_IMG}",
                     caption=f"💡 **𝚃𝚁𝙰𝙲𝙺 𝙰𝙳𝙳𝙴𝙳 𝚃𝙾 𝚀𝚄𝙴𝚄𝙴 »** `{pos}`\n\n💭 **𝙲𝙷𝙰𝚃 ✘** `{chat_id}`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}",
                     reply_markup=keyboard,
                 )
@@ -432,7 +432,7 @@ async def vstream(c: Client, m: Message):
                         f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                     )
                     await m.reply_photo(
-                        photo=f"{IMG_2}",
+                        photo=f"{ROYAL_IMG}",
                         caption=f"💡 **[𝚅𝙸𝙳𝙴𝙾 𝙻𝙸𝚅𝙴]({link}) 𝚂𝚃𝚁𝙴𝙰𝙼 𝚂𝚃𝙰𝚁𝚃𝙴𝙳.**\n\n💭 **𝙲𝙷𝙰𝚃 ✘** `{chat_id}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}",
                         reply_markup=keyboard,
                     )
