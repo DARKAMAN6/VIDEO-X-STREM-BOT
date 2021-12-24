@@ -126,7 +126,7 @@ async def vplay(c: Client, m: Message):
 
     if replied:
         if replied.video or replied.document:
-            loser = await replied.reply("**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
+            loser = await replied.reply("**🔥𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝚅𝙸𝙳𝙴𝙾**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
@@ -188,7 +188,7 @@ async def vplay(c: Client, m: Message):
                     "» reply to an **video file** or **give something to search.**"
                 )
             else:
-                loser = await c.send_message(chat_id, "**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
+                loser = await c.send_message(chat_id, "**𝚁𝙾𝚈𝙰𝙻 𝙺𝙸𝙽𝙶 𝙾𝙽 𝙵𝙸𝚁𝙴🔥**")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 Q = 720
@@ -245,7 +245,7 @@ async def vplay(c: Client, m: Message):
                 "» reply to an **video file** or **give something to search.**"
             )
         else:
-            loser = await c.send_message(chat_id, "**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
+            loser = await c.send_message(chat_id, "**𝚁𝙾𝚈𝙰𝙻 𝙺𝙸𝙽𝙶 𝙾𝙽 𝙵𝙸𝚁𝙴🔥**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
@@ -372,7 +372,7 @@ async def vstream(c: Client, m: Message):
         if len(m.command) == 2:
             link = m.text.split(None, 1)[1]
             Q = 720
-            loser = await c.send_message(chat_id, "**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
+            loser = await c.send_message(chat_id, "**🔥𝙿𝚁𝙾𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝚂𝚃𝚁𝙴𝙰𝙼**")
         elif len(m.command) == 3:
             op = m.text.split(None, 1)[1]
             link = op.split(None, 1)[0]
@@ -384,7 +384,7 @@ async def vstream(c: Client, m: Message):
                 await m.reply(
                     "» __only 720, 480, 360 allowed__ \n💡 **now streaming video in 720p**"
                 )
-            loser = await c.send_message(chat_id, "**🔥𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙽𝙶 𝚃𝙾 𝚁𝙾𝚈𝙰𝙻 𝚂𝙴𝚁𝚅𝙴𝚁𝚂**")
+            loser = await c.send_message(chat_id, "**🔥𝙿𝚁𝙾𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝚂𝚃𝚁𝙴𝙰𝙼**")
         else:
             await m.reply("**/vstream {link} {720/480/360}**")
 
