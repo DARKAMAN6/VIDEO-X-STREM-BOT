@@ -5,7 +5,7 @@ from driver.decorators import authorized_users_only
 from driver.filters import command, other_filters
 from driver.queues import QUEUE, clear_queue
 from driver.utils import skip_current_song, skip_item
-from config import BOT_USERNAME, GROUP_SUPPORT, IMG_3, UPDATES_CHANNEL
+from config import BOT_USERNAME, GROUP_SUPPORT, ROYAL_IMG, UPDATES_CHANNEL
 from pyrogram.types import (
     CallbackQuery,
     InlineKeyboardButton,
@@ -15,12 +15,12 @@ from pyrogram.types import (
 
 
 bttn = InlineKeyboardMarkup(
-    [[InlineKeyboardButton("🔙 Go Back", callback_data="cbmenu")]]
+    [[InlineKeyboardButton("🖱️𝙱𝙰𝙲𝙺", callback_data="cbmenu")]]
 )
 
 
 bcl = InlineKeyboardMarkup(
-    [[InlineKeyboardButton("🗑 Close", callback_data="cls")]]
+    [[InlineKeyboardButton("🗑𝙲𝙻𝙾𝚂𝙴", callback_data="cls")]]
 )
 
 
@@ -66,7 +66,7 @@ async def skip(client, m: Message):
             await m.reply("🗑️ **Clearing the Queues**\n\n**• userbot leaving voice chat**")
         else:
             await m.reply_photo(
-                photo=f"{IMG_3}",
+                photo=f"{ROYAL_IMG}",
                 caption=f"⏭ **Skipped to the next track.**\n\n🏷 **Name:** [{op[0]}]({op[1]})\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {m.from_user.mention()}",
                 reply_markup=keyboard,
             )
