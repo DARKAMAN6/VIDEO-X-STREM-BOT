@@ -63,7 +63,7 @@ async def vplay(c: Client, m: Message):
         [
             [
                 InlineKeyboardButton(text="✨𝐌𝐄𝐍𝐔༎⃝➤", callback_data="cbmenu"),
-                InlineKeyboardButton(text="• Cʟᴏsᴇ", callback_data="cls"),
+                InlineKeyboardButton(text="༎⃝🌺𝐂𝐋𝐎𝐒𝐄༎⃝➤", callback_data="cls"),
             ]
         ]
     )
