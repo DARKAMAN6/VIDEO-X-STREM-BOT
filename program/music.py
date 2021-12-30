@@ -146,7 +146,7 @@ async def play(c: Client, m: Message):
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
                     photo=f"{ROYAL_IMG}",
-                    caption=f"🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({link})\n💭 **𝙲𝙷𝙰𝚃 ✘** `{chat_id}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}\n𖣘 **𝚂𝚃𝚁𝙴𝙰𝙼 𝚃𝚈𝙿𝙴 ✘** `𝙼𝚄𝚂𝙸𝙲`",
+                    caption=f"🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({link})\n💭 **𝙲𝙷𝙰𝚃 ✘** `{chat_id}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}\n🖱️ **𝚂𝚃𝚁𝙴𝙰𝙼 𝚃𝚈𝙿𝙴 🔥** `𝙼𝚄𝚂𝙸𝙲`",
                     reply_markup=keyboard,
                 )
              except Exception as e:
@@ -199,7 +199,7 @@ async def play(c: Client, m: Message):
                                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                                 await m.reply_photo(
                                     photo=thumbnail,
-                                    caption=f"🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({url})\n**⏱ 𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 ✘** `{duration}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈** {requester}\n𖣘 **𝚂𝚃𝚁𝙴𝙰𝙼 𝚃𝚈𝙿𝙴 ✘** `𝙼𝚄𝚂𝙸𝙲`",
+                                    caption=f"🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({url})\n**⏱ 𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 ✘** `{duration}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈** {requester}\n🖱️ **𝚂𝚃𝚁𝙴𝙰𝙼 𝚃𝚈𝙿𝙴 🔥** `𝙼𝚄𝚂𝙸𝙲`",
                                     reply_markup=keyboard,
                                 )
                             except Exception as ep:
@@ -253,7 +253,7 @@ async def play(c: Client, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=thumbnail,
-                                caption=f"🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({url})\n**⏱ 𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 ✘** `{duration}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}\n𖣘 **𝚂𝚃𝚁𝙴𝙰𝙼 𝚃𝚈𝙿𝙴 ✘** `𝙼𝚄𝚂𝙸𝙲`",
+                                caption=f"🏷 **𝙽𝙰𝙼𝙴 ✘** [{songname}]({url})\n**⏱ 𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 ✘** `{duration}`\n💡 **𝚂𝚃𝙰𝚃𝚄𝚂 ✘** `𝙿𝙻𝙰𝚈𝙸𝙽𝙶`\n🎧 **𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙱𝚈 ✘** {requester}\n🖱️ **𝚂𝚃𝚁𝙴𝙰𝙼 𝚃𝚈𝙿𝙴 🔥** `𝙼𝚄𝚂𝙸𝙲`",
                                 reply_markup=keyboard,
                             )
                         except Exception as ep:
