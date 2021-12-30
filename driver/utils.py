@@ -23,8 +23,8 @@ from pytgcalls.types.stream import StreamAudioEnded, StreamVideoEnded
 keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(text="• Mᴇɴᴜ", callback_data="cbmenu"),
-                InlineKeyboardButton(text="• Cʟᴏsᴇ", callback_data="cls"),
+                InlineKeyboardButton(text="✨𝐌𝐄𝐍𝐔༎⃝➤", callback_data="cbmenu"),
+                InlineKeyboardButton(text="༎⃝🌺𝐂𝐋𝐎𝐒𝐄༎⃝➤", callback_data="cls"),
             ]
         ]
     )
@@ -111,11 +111,11 @@ async def stream_end_handler(_, u: Update):
         print(chat_id)
         op = await skip_current_song(chat_id)
         if op==1:
-           await bot.send_message(chat_id, "✅ **userbot has disconnected from video chat.**")
+           await bot.send_message(chat_id, "✅ **𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𝙷𝙰𝚂 𝙳𝙸𝚂𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙴𝙳 𝙵𝚁𝙾𝙼 𝚅𝙸𝙳𝙴𝙾 𝙲𝙷𝙰𝚃**")
         elif op==2:
-           await bot.send_message(chat_id, "❌ **an error occurred**\n\n» **Clearing** __Queues__ **and leaving video chat.**")
+           await bot.send_message(chat_id, "❌ **𝙰𝙽 𝙴𝚁𝚁𝙾𝚁 𝙾𝙲𝙲𝚄𝚁𝚁𝙴𝙳**\n\n» **𝙲𝙻𝙴𝙰𝚁𝙸𝙽𝙶** __Queues__ **𝙰𝙽𝙳 𝙻𝙴𝙰𝚅𝙸𝙽𝙶 𝚅𝙸𝙳𝙴𝙾 𝙲𝙷𝙰𝚃**")
         else:
-         await bot.send_message(chat_id, f"💡 **Streaming next track**\n\n🏷 **Name:** [{op[0]}]({op[1]}) | `{op[2]}`\n💭 **Chat:** `{chat_id}`", disable_web_page_preview=True, reply_markup=keyboard)
+         await bot.send_message(chat_id, f"💡 **𝚂𝚃𝚁𝙴𝙰𝙼𝙸𝙽𝙶 𝙽𝙴𝚇𝚃 𝚃𝚁𝙰𝙲𝙺**\n\n🏷 **𝙽𝙰𝙼𝙴 ✘** [{op[0]}]({op[1]}) | `{op[2]}`\n🖱️ **𝙲𝙷𝙰𝚃 ✘** `{chat_id}`", disable_web_page_preview=True, reply_markup=keyboard)
     else:
        pass
 
